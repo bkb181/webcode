@@ -1,0 +1,6 @@
+var i,n=8;
+while(n)
+{
+ console.log("train #"+n+"ïs running");
+n--;
+}

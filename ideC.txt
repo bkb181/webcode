@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="programming, code online, snippet, snippets, code debugging, run code, execute code, C, C++, Java" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>IDE | GeeksforGeeks | A computer science portal for geeks</title>
+	<link rel="icon" href="http://contribute.geeksforgeeks.org/wp-content/themes/iconic-one/images/gfglogo.ico" type="image/x-icon" />
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script defer src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style-2.0.css">
+	<script type="text/javascript">
+		var editor = null;
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-37433965-2', 'auto');ga('send', 'pageview');
+	</script>
+	<script defer src="ace/src-min/ace.js" onload="editor = ace.edit('editor')"></script>
+	<script defer src="ace/src-min/ext-themelist.js"></script>
+	<script defer src="ace/src-min/ext-language_tools.js"></script>
+	<script defer src="js/gfg-2.0.js"></script>
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"></script>
+	<![endif]-->
+</head>
+<body class="wf">
+<nav class="bb navbar navbar-default">
+	<div class="container-fluid">
+		<div class="row whiteHeaderStripBar">
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+					<div style="height:50px;float: left;">
+						<a class="logo" href="/">{IDE}</a><b style="color:#005C00;">&nbsp;&nbsp;&nbsp;&nbsp;BETA</b>
+					</div>
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Theme <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="theme" ><a href="javascript:void(0)">Light</a></li>
+								<li class="theme" ><a href="javascript:void(0)">Dark</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 text-center">
+					<hgroup class="text-right" style="margin-top:5px;">   
+					  <a class="products" href="http://www.geeksforgeeks.org/">GeeksforGeeks</a>
+					  <a class="products" href="http://practice.geeksforgeeks.org/">Practice</a>
+					  <a class="products" href="http://quiz.geeksforgeeks.org/placements/">Placements</a>
+					  <a class="products" href="https://www.youtube.com/geeksforgeeksvideos/">Videos</a>
+					  <a class="products" href="http://www.geeksforgeeks.org/contribute/">Contribute</a>
+					</hgroup>
+				</div>
+			</div>
+		<div style="display:none">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-coll" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div>
+					<a href="index.php"><img class="logo" src="images/logo.png" /></a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="nav-coll">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a target="_blank" href="http://www.geeksforgeeks.org/">GeeksforGeeks</a></li>
+					<li><a target="_blank" href="http://practice.geeksforgeeks.org/">Practice</a></li>
+					<li><a target="_blank" href="http://geeksquiz.com/">GeeksQuiz</a></li>
+					<li><a target="_blank" href="http://qa.geeksforgeeks.org/">GeeksforGeeks QA</a></li>
+					<li><a href="report.php">Report Bug</a></li>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Theme <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="theme" ><a href="javascript:void(0)">Light</a></li>
+							<li class="theme" ><a href="javascript:void(0)">Dark</a></li>
+						</ul>
+					</li>
+					<li><p class="navbar-text"><span class="label label-default">BETA</span></p></li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+<script src="dropzone.js" ></script>	
+<script type="text/javascript">
+var language = 'C';</script>
+<div class="container-fluid" style="margin-bottom:15px;">
+	<div class="row">
+		<div class="col-sm-9 col-xs-12">
+			<div class="col-sm-offset-1 col-sm-11 col-xs-12" style="margin-bottom:8px;">
+				<div class="row">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Responsive Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9465609616171866"
+     data-ad-slot="6125068436"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>				</div>
+			</div>
+			<div class="col-sm-1 col-xs-12">
+				<div class="row form-group btn-group vertBtns" role="group">
+					<button type="button" l="C" class="lang btn btn-default form-control" style="border-radius: 0;">C</button>
+					<button data-toggle="tooltip" title="C++11 supported" type="button" l="Cpp" class="lang btn btn-default form-control">C++</button>
+					<button type="button" l="Cpp14"    class="lang btn btn-default form-control">C++14</button>
+					<button type="button" l="Csharp" class="lang btn btn-default form-control">C#</button>
+					<button type="button" l="Java" class="lang btn btn-default form-control">Java</button>
+					<button type="button" l="Perl" class="lang btn btn-default form-control">Perl</button>
+					<button type="button" l="Php" class="lang btn btn-default form-control">PHP</button>
+					<button type="button" l="Python" class="lang btn btn-default form-control">Python</button>
+					<button type="button" l="Python3" class="lang btn btn-default form-control">Python 3</button>
+					<button type="button" l="Scala" class="lang btn btn-default form-control" style="border-radius: 0;">Scala</button>
+				</div>
+				<div class="row form-group vertBtns">
+					<button id="saveFile" data-toggle="tooltip" title="Download Code" class="savebtn btn btn-default form-control">
+						<span class="glyphicon glyphicon-cloud-download"></span>
+					</button>
+	     			<form role="form" id="uploadForm" data-toggle="tooltip" title="Upload Code" class="btn btn-default form-control dropzone" action=" " enctype="multipart/form-data">
+	       			    <span class="glyphicon glyphicon-cloud-upload"></span><input type="hidden" name="file">
+	     			</form>
+				</div>
+			</div>
+			<div class="col-sm-11 col-xs-12">
+				<div class="row">
+	                <div class = 'btn btn-default tab col-sm-2 col-xs-4' style = 'display:none' id = 'tab0' name = '0'> <div class = 'text'>Tab0</div> <button class = 'btn btn-default btn-sm closeTab' name = '0' ><i class='glyphicon glyphicon-minus-sign'></i></button>  </div><div class = 'btn btn-default tab col-sm-2 col-xs-4' style = 'display:none' id = 'tab1' name = '1'> <div class = 'text'>Tab1</div> <button class = 'btn btn-default btn-sm closeTab' name = '1' ><i class='glyphicon glyphicon-minus-sign'></i></button>  </div><div class = 'btn btn-default tab col-sm-2 col-xs-4' style = 'display:none' id = 'tab2' name = '2'> <div class = 'text'>Tab2</div> <button class = 'btn btn-default btn-sm closeTab' name = '2' ><i class='glyphicon glyphicon-minus-sign'></i></button>  </div><div class = 'btn btn-default tab col-sm-2 col-xs-4' style = 'display:none' id = 'tab3' name = '3'> <div class = 'text'>Tab3</div> <button class = 'btn btn-default btn-sm closeTab' name = '3' ><i class='glyphicon glyphicon-minus-sign'></i></button>  </div><div class = 'btn btn-default tab col-sm-2 col-xs-4' style = 'display:none' id = 'tab4' name = '4'> <div class = 'text'>Tab4</div> <button class = 'btn btn-default btn-sm closeTab' name = '4' ><i class='glyphicon glyphicon-minus-sign'></i></button>  </div>	                <button class = "btn btn-default" id="addTab"><i class='glyphicon glyphicon-plus-sign'></i></button>
+	            	<a id="full" data-toggle="tooltip" title="Click to Zoom" href="javascript:void(0)">
+						<span class="glyphicon glyphicon-fullscreen"></span>
+					</a>
+	            	<button id="reset1" class="sbt btn btn-default">
+	                	<span class="glyphicon glyphicon-refresh"></span>
+	                	Reset
+	            	</button>
+		            <button class="btn btn-default btnEditor pull-right">Copy</button>
+	            </div>
+				<div class="row">
+					<form role="form" class="dropzone clickable-dz" action=" " enctype="multipart/form-data">
+						<div class="form-group">
+							<div class="editorBlock">
+								<pre id="editor">/* A recursive C program to print maximum number of A's using 
+following four keys */
+#include&lt;stdio.h&gt;
+
+// A recursive function that returns the optimal length string 
+// for N keystrokes
+int findoptimal(int N)
+{
+	// The optimal string length is N when N is smaller than 7
+	if (N &lt;= 6)
+		return N;
+
+	// Initialize result
+	int max = 0;
+
+	// TRY ALL POSSIBLE BREAK-POINTS
+	// For any keystroke N, we need to loop from N-3 keystrokes
+	// back to 1 keystroke to find a breakpoint 'b' after which we
+	// will have Ctrl-A, Ctrl-C and then only Ctrl-V all the way.
+	int b;
+	for (b=N-3; b&gt;=1; b--)
+	{
+			// If the breakpoint is s at b'th keystroke then
+			// the optimal string would have length
+			// (n-b-1)*screen[b-1];
+			int curr = (N-b-1)*findoptimal(b);
+			if (curr &gt; max)
+				max = curr;
+	}
+	return max;
+}
+
+// Driver program
+int main()
+{
+	int N;
+
+	// for the rest of the array we will rely on the previous
+	// entries to compute new ones
+	for (N=1; N&lt;=20; N++)
+		printf(&quot;Maximum Number of A's with %d keystrokes is %d\n&quot;,
+			N, findoptimal(N));
+}
+</pre>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="row">
+					<div class="row inputRunDiv">
+						<div class="form-group col-sm-7 col-xs-12 inputDiv">
+							<textarea id="input" placeholder="Input Goes Here.." maxlength="10000" class="gb wf form-control input"></textarea>
+							<button class="btn btn-default btnInput" type="button">Copy</button>
+						</div>
+						<div class="sbt-group btn-group col-sm-5 col-xs-12" role="group">
+							<button id="run" class="sbt btn btn-default" title="Run Program(Ctrl+Enter)">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+								<b>Run</b>
+							</button>
+		                    <button id="runurl" class="sbt btn btn-default" title="Generates URL as well for Code Sharing">
+		                    	<span class="glyphicon glyphicon-chevron-right"></span>
+		                		<b>Run+URL (Generates URL as well)</b>
+		            		</button>				
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="row">
+					<div class="col-sm-11 col-xs-12">
+						<div class="lang-group btn-group col-sm-12" role="group">
+							<button type="button" l="C"    class="lang btn btn-default">C</button>
+							<button data-toggle="tooltip" title="C++11 supported" type="button" l="Cpp" class="lang btn btn-default">C++</button>
+							<button type="button" l="Cpp14" class="lang btn btn-default">C++14</button>
+							<button type="button" l="Csharp" class="lang btn btn-default">C#</button>
+							<button type="button" l="Java" class="lang btn btn-default">Java</button>
+							<button type="button" l="Perl" class="lang btn btn-default">Perl</button>
+							<button type="button" l="Php" class="lang btn btn-default">PHP</button>
+							<button type="button" l="Python" class="lang btn btn-default">Python</button>
+							<button type="button" l="Python3" class="lang btn btn-default">Python 3</button>
+							<button type="button" l="Scala" class="lang btn btn-default">Scala</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-11 col-xs-12">
+					<div class="form-group lang-group row">
+						<div class="col-xs-6">
+							<button id="saveFileSmallScreen" data-toggle="tooltip" title="Download Code" class="savebtn btn btn-default form-control">
+								<span class="glyphicon glyphicon-cloud-download"></span>
+							</button>
+						</div>
+						<div class="col-xs-6">
+							<form role="form" id="uploadFormSmallScreen" data-toggle="tooltip" title="Upload Code" class="dropzone btn btn-default form-control" action=" " enctype="multipart/form-data">
+			       			    <span class="glyphicon glyphicon-cloud-upload"></span><input type="hidden" name="file">
+			     			</form>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-offset-1 col-sm-11 col-xs-12">
+				<div style="display:none" class="row err">
+					<div class="alert alert-danger">
+						Oops! Something went wrong. You are probably allocating too much memory or producing too much output.
+					</div>
+				</div>
+									<div class="row url">
+						<h3>Generated URL:<button class="btn btn-default btnLink pull-right">Copy</button></h3>
+						<pre class="gb wf" id="preLink">http://ide.geeksforgeeks.org/YHDqsp</pre>
+					</div>
+													<div style="display:none;" class="row cmp">
+						<h3>Compile Errors : </h3>
+						<pre class="gb wf" style="max-height:100px;overflow-y:scroll"></pre>
+					</div>
+				
+				
+					                                <div style="display:none;" class="row war">
+	                                        <h3>Warnings: </h3>
+	                                        <pre class="gb wf" style="max-height:100px;overflow-y:scroll"></pre>
+	                                </div>
+	                        				
+
+					<div style="display:none" class="row stats">
+						<div class="col-sm-6" style="display:inline">
+							<h4 style="display:inline;">Time(sec) : </h4>
+							<h4 class="time" style="display:inline;"> 0.25 </h4>
+						</div>
+						<div class="col-sm-6" style="display:inline">
+                                                        <h4 style="display:inline;">Memory(MB) : </h4>
+                                                        <h4 class="memory" style="display:inline;"> 0.25 </h4>
+                                                </div>
+					</div>
+
+
+
+									<div style="display:none;" class="row rnt">
+						<h3>Runtime Errors: </h3>
+						<pre class="gb wf" style="max-height:100px;overflow-y:scroll"></pre>
+					</div>
+													<div class="row out">
+						<h3>Output: <button class="btn btn-default btnOutput pull-right">Copy</button></h3>
+													<pre class="gb wf" id="preOutput">Maximum Number of A's with 1 keystrokes is 1
+Maximum Number of A's with 2 keystrokes is 2
+Maximum Number of A's with 3 keystrokes is 3
+Maximum Number of A's with 4 keystrokes is 4
+Maximum Number of A's with 5 keystrokes is 5
+Maximum Number of A's with 6 keystrokes is 6
+Maximum Number of A's with 7 keystrokes is 9
+Maximum Number of A's with 8 keystrokes is 12
+Maximum Number of A's with 9 keystrokes is 16
+Maximum Number of A's with 10 keystrokes is 20
+Maximum Number of A's with 11 keystrokes is 27
+Maximum Number of A's with 12 keystrokes is 36
+Maximum Number of A's with 13 keystrokes is 48
+Maximum Number of A's with 14 keystrokes is 64
+Maximum Number of A's with 15 keystrokes is 81
+Maximum Number of A's with 16 keystrokes is 108
+Maximum Number of A's with 17 keystrokes is 144
+Maximum Number of A's with 18 keystrokes is 192
+Maximum Number of A's with 19 keystrokes is 256
+Maximum Number of A's with 20 keystrokes is 324
+</pre>
+											</div>
+							</div>
+			<div class="col-sm-offset-1 col-sm-11 col-xs-12 hidden-xs">
+				<div class="row">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Responsive Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9465609616171866"
+     data-ad-slot="6125068436"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>				</div>
+			</div>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			<div style="margin-bottom: 10px;">
+				<a href="report.php" class="btn btn-success form-control" type="button" style="background-color:#4CB96B;font-size: 18px;border-radius: 0;">Report Bug</a>
+			</div>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Responsive Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9465609616171866"
+     data-ad-slot="6125068436"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>				<div class="important_links_div" style="background-color:#fff;margin: 10px 0px;text-align: center;">
+				    <table width="100%" align="center">
+				        <thead>
+				            <tr>
+				                <th style="border:1px solid #6AA84F;background-color:#4CB96B;color:#fff;text-align: center;font-size: 16px;">Important Links</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/category/interview-experiences/" style="">Recent Interview Experiences</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/category/project/" style="">Project Ideas</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/school-programming/" style="">School Programming</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/company-preparation/" style="">Company Preparation</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/quiz-corner-gq/" style="">Quiz Corner</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://practice.geeksforgeeks.org/topic-tags/?ref=ide" style="">Topic-wise Problems</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://practice.geeksforgeeks.org/subjective-page.php?ref=ide" style="">Subjective Problems</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://www.geeksforgeeks.org/placements-gq/" style="">Placements</a> </td>
+				            </tr>
+				            <tr>
+				                <td style="border:1px solid #6AA84F;padding:2px;">
+				                    <a href="http://practice.geeksforgeeks.org/pickACategory.php?ref=ide" style="">How to pick a difficulty level?</a> </td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>	
+			<br/>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Responsive Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9465609616171866"
+     data-ad-slot="6125068436"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>		</div>
+	</div>
+</div>
+		<footer>
+			<div id="footer" class="footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 text-center division">
+							<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/in/deed.en_US" target="_blank"><span>@geeksforgeeks,</span> Some rights reserved</a>
+						</div>
+						<div class="col-sm-1 col-xs-12 text-center division">
+							<a href="http://www.geeksforgeeks.org/about/contact-us/" target="_blank">Contact Us!</a>
+                                                </div>
+						<div class="col-sm-1 col-xs-12 text-center division">
+							<a href="http://www.geeksforgeeks.org/about/" target="_blank">About Us!</a>
+                                                </div>
+						<div class="col-sm-1 col-xs-12 text-center division">
+							<a href="http://www.geeksforgeeks.org/careers/" target="_blank">Careers!</a>
+                                                </div>
+						<div class="col-sm-2 col-xs-12 text-center division">
+							<a href="http://www.geeksforgeeks.org/privacy-policy/" target="_blank">Privacy Policy</a>
+                                                </div>
+						<div class="col-sm-3 col-xs-12 socialDiv text-center">
+							<a href="https://www.facebook.com/GeeksforGeeks-316764689022/timeline/" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top" title="facebook">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_facebook_green.png">
+							</a>
+							<a href="https://twitter.com/geeksforgeeks" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top"  title="twitter">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_twitter_green.png">
+							</a>
+							<a href="https://www.linkedin.com/company-beta/1299009" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top" title="linkedin">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_linkedin_green.png">
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=free.programming.programming" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top" title="play store">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_play_store_green.png">
+							</a>
+							<a href="https://www.microsoft.com/en-us/store/apps/geeksforgeeks-official/9nblggh4rh30" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top" title="windows store">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_windows_store_green.png">
+							</a>
+							<a href="https://itunes.apple.com/us/app/geeksforgeeks/id1101205459?ls=1&amp;mt=8" target="_blank" class="socialBtn" data-toggle="tooltip" data-placement="top" title="app store">
+								<img src="http://www.geeksforgeeks.org/wp-content/uploads/square_app_store_green.png">
+							</a>
+                                                </div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
